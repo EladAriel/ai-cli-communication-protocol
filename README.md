@@ -100,6 +100,15 @@ The "file bloat" problem is real. If you have 500 tasks, the folder becomes a me
 
 ## Setup
 
-1.  **Copy** `.ai-protocol/` and `ai-protocol-tasks/` into your repo.
-2.  **Ensure** the `gemini`, `codex`, and/or `claude` CLIs are in your `PATH`.
-3.  **Start** your interaction with Gemini CLI.
+1.  **Clone the protocol repository**:
+    ```bash
+    git clone https://github.com/EladAriel/ai-cli-communication-protocol.git
+    cd ai-cli-communication-protocol
+    ```
+2.  **Copy the protocol files to your project**:
+    Run the following command from the root of the cloned repository (replace `/path/to/your/project` with your actual project path):
+    ```bash
+    cp -rv .ai-protocol/ ai-protocol-tasks/ AGENTS.md CLAUDE.md GEMINI.md /path/to/your/project/
+    ```
+3.  **Ensure** the `gemini`, `codex`, and/or `claude` CLIs are in your `PATH`.
+4.  **Start** your interaction with Gemini CLI in your project root.

@@ -32,10 +32,17 @@ STATUS=$(grep -m1 "^## Status:" "$TASK_FILE" | sed 's/^## Status:[[:space:]]*//'
 TITLE=$(grep -m1 "^# Task:" "$TASK_FILE" | sed 's/^# Task:[[:space:]]*//')
 
 # Check implementer availability
-HAS_CODEX=false
-command -v codex >/dev/null 2>&1 && HAS_CODEX=true
-HAS_CLAUDE=false
-command -v claude >/dev/null 2>&1 && HAS_CLAUDE=true
+if which codex >/dev/null 2>&1; then
+  HAS_CODEX="true"
+else
+  HAS_CODEX="false"
+fi
+
+if which claude >/dev/null 2>&1; then
+  HAS_CLAUDE="true"
+else
+  HAS_CLAUDE="false"
+fi
 
 DIVIDER="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
@@ -56,7 +63,7 @@ get_agent() {
   fi
 
   # For planned, check availability
-  if $HAS_CODEX && $HAS_CLAUDE; then
+  if [[ "$HAS_CODEX" == "true" ]] && [[ "$HAS_CLAUDE" == "true" ]]; then
     if [[ "$MODE" == "human" ]]; then
       echo "Both Codex and Claude are available. Select the implementer for this task:" >&2
       PS3="Choice: "
@@ -70,7 +77,7 @@ get_agent() {
       # Machine mode default
       echo "codex"
     fi
-  elif $HAS_CLAUDE; then
+  elif [[ "$HAS_CLAUDE" == "true" ]]; then
     echo "claude"
   else
     # Default to codex (even if missing, to show error later) or if only codex exists

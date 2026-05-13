@@ -54,7 +54,7 @@ In this version of the protocol, **Gemini CLI** handles the orchestration. It re
 │   └── YYYY-MM-DD-*.md  ← Active task files
 ├── GEMINI.md            ← Root link to .ai-protocol/GEMINI.md
 ├── CLAUDE.md            ← Root link to .ai-protocol/CLAUDE.md
-└── CODEX.md             ← Root link to .ai-protocol/AGENTS.md
+└── AGENTS.md             ← Root link to .ai-protocol/AGENTS.md
 ```
 
 ---
@@ -65,7 +65,7 @@ To ensure agents are aware of the protocol automatically when starting in the re
 
 - **GEMINI.md**: Directs Gemini CLI to the detailed planner/reviewer rules.
 - **CLAUDE.md**: Directs Claude Code to the implementation rules.
-- **CODEX.md**: Directs Codex CLI to the agent-specific implementation guide.
+- **AGENTS.md**: Directs Codex CLI to the agent-specific implementation guide.
 
 These files serve as entry points that point the agents to the canonical specifications inside the `.ai-protocol/` directory.
 

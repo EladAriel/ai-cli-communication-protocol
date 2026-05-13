@@ -20,7 +20,7 @@ Do not touch the task file when status is `gemini-reviewing` or `approved`.
 
 1. Read the task file and `PROTOCOL.md`.
 2. Set `## Status:` to `codex-implementing`.
-3. Inspect relevant source files before writing any code.
+3. Inspect relevant source files before writing any code (IGNORE `ai-protocol-tasks/archive/`).
 4. Implement the change.
 5. Run relevant tests or checks.
 6. Append to `## Codex Notes`:
@@ -65,7 +65,7 @@ Your role: Implement the change described in ## Goal.
 
 Steps:
 - Set ## Status: to codex-implementing
-- Inspect relevant files
+- Inspect relevant files (IGNORE ai-protocol-tasks/archive/)
 - Implement the change
 - Run relevant tests/checks
 - Append to ## Codex Notes (date, files read, files changed, commands, result)

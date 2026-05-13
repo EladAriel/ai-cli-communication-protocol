@@ -112,7 +112,7 @@ High-level goal: [GOAL]
 Your role: Plan the work and initiate the first implementation.
 
 Steps:
-1. Inspect source files to understand scope
+1. Inspect source files to understand scope (IGNORE ai-protocol-tasks/archive/)
 2. Break goal into tasks (one Codex-review cycle each)
 3. For each task:
    - Run: ./.ai-protocol/scripts/new-task.sh "<slug>" "<one-sentence goal>"
@@ -153,7 +153,7 @@ Use after 3–5 collaboration tasks:
 ```
 Read PROTOCOL.md and GEMINI.md.
 
-Review the last 3–5 files in ai-protocol-tasks/.
+Review the last 3–5 files in ai-protocol-tasks/ (do NOT read from ai-protocol-tasks/archive/).
 
 Your role: Find repeated patterns worth turning into a reusable skill.
 

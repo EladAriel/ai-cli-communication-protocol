@@ -35,8 +35,18 @@ Any status ──► blocked  (either agent or human sets this when stuck)
 | `gemini-reviewing` | Gemini (on start) | Gemini |
 | `needs-fixes` | Gemini (found issues) | Original Implementer |
 | `approved` | Gemini (no issues) | Human |
-| `done` | Human | — |
+| `done` | Human | Human (run archive script) |
 | `blocked` | Any agent or human | Human (must resolve manually) |
+
+### Archiving Completed Tasks
+
+Once a task reaches the `done` status, it should be archived to prevent the `ai-protocol-tasks/` directory from becoming cluttered and bloating the AI's context window.
+
+Run the cleanup script:
+```bash
+./.ai-protocol/scripts/archive-tasks.sh
+```
+This moves `done` tasks into `ai-protocol-tasks/archive/YYYY-MM/`. **Note:** AI agents are instructed to ignore the `archive/` folder during active planning and implementation.
 
 ### Rules
 

@@ -24,7 +24,7 @@ claude "$PROMPT"
 
 1. Read the task file and `PROTOCOL.md`.
 2. Set `## Status:` to `claude-implementing`.
-3. Inspect relevant source files.
+3. Inspect relevant source files (IGNORE `ai-protocol-tasks/archive/`).
 4. Implement the change and run tests.
 5. Append to `## Claude Notes`.
 6. Set `## Status:` to `ready-for-review`.

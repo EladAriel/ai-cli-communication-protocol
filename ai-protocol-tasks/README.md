@@ -5,9 +5,9 @@ This folder is the message bus between CLI agents. Gemini CLI orchestrates the f
 ## Status Machine
 
 ```
-planned → codex-implementing → ready-for-review → gemini-reviewing
-                                                       ├─► approved → done
-                                                       └─► needs-fixes → codex-implementing
+planned → codex-implementing or claude-implementing → ready-for-review → gemini-reviewing
+                                                                             ├─► approved → done
+                                                                             └─► needs-fixes → codex-implementing or claude-implementing
 ```
 
 ## Reference Templates
@@ -18,7 +18,7 @@ See the `ai-protocol-tasks/ref/` directory for samples:
 
 ## Rules
 
-- **Gemini CLI** manages the lifecycle and invokes Codex.
+- **Gemini CLI** manages the lifecycle and invokes Codex or Claude.
 - **Append** to your section; never rewrite the other agent's section.
 - **decisions.md** is append-only. Never delete or reformat old rows.
 - Keep notes short. No large log pastes.
